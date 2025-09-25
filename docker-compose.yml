@@ -1,0 +1,17 @@
+services:
+  llm:
+    build:
+      context: ./docker/llm
+    ports:
+        - "10000:10000"
+    volumes:
+        - ./symlink:/data
+    restart: unless-stopped
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    ports:
+        - "8080:8080"
+    volumes:
+        - /var/lib/docker/volumes/open-webui/_data:/app/backend/data
+    restart: unless-stopped
