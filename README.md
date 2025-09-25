@@ -1,5 +1,6 @@
 # PAM
 Personal Assistance Machine
+This artificial intelligence consists of a large language model for tropical storm simulations.
 
 # Large Language Model (LLM) Files (GGUF)
 The system is locally hosted. The prerequisite are the associated GGUF files. Please create a directory called `symlink` in the root that directs the orchestrator to find the LLM files. To create the symbolic link, use the following command by replacing the `/path/to/ggufs` with the path to the LLM files.
