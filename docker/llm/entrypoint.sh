@@ -4,4 +4,6 @@ cd /llama.cpp/build/bin/
     --port 10000 \
     --ctx-size 8192 \
     --threads 64 \
-    --host 0.0.0.0
+    --host 0.0.0.0 \
+    --no-nmap \
+    --offline
