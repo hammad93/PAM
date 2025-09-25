@@ -6,6 +6,9 @@ The system is locally hosted. The prerequisite are the associated GGUF files. Pl
 
 `ln -s /path/to/ggufs ./symlink`
 
+## Updating Model
+If we are switching the LLM or otherwise updating it, we need to ensure that the llama.cpp server configuration reflects it. In the `docker/llm` directory there is a  `entrypoint.sh` file that contains the initial configuration. Please update the GGUF filename with the first in the sequence for the `--model` flag.
+
 # Trusted Platform Module (TPM)
 The TPM can be configured such that the application is compliant with rigorous security standards and for data science purposes such as random number generation. The following command describes how to configure a TPM chip to work with a container.
 
