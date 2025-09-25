@@ -1,5 +1,6 @@
 FROM continuumio/anaconda3
 RUN apt-get update && apt-get install -y build-essential
+# RUN apt-get install -y tpm2tools libtss2-dev
 
 # Install llama.cpp
 RUN git clone https://github.com/ggerganov/llama.cpp.git

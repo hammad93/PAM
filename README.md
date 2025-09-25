@@ -2,7 +2,14 @@
 Personal Assistance Machine
 
 # Large Language Model (LLM) Files (GGUF)
-The system is locally hosted. The prerequisite are the associated GGUF files. Please create a directory called `symlink` in the root that directs the orchestrator to find the LLM files.
+The system is locally hosted. The prerequisite are the associated GGUF files. Please create a directory called `symlink` in the root that directs the orchestrator to find the LLM files. To create the symbolic link, use the following command by replacing the `/path/to/ggufs` with the path to the LLM files.
+
+`ln -s /path/to/ggufs ./symlink`
+
+# Trusted Platform Module (TPM)
+The TPM can be configured such that the application is compliant with rigorous security standards and for data science purposes such as random number generation. The following command describes how to configure a TPM chip to work with a container.
+
+`docker run --device /dev/tpm0:/dev/tpm0 --device /dev/tpmrm0:/dev/tpmrm0`
 
 # Quickstart
 
