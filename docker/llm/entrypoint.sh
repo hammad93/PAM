@@ -5,5 +5,6 @@ cd /llama.cpp/build/bin/
     --ctx-size 4096 \
     --threads 64 \
     --host 0.0.0.0 \
-    --no-nmap \
+    --mlock \
+    --no-mmap \
     --offline

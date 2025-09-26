@@ -3,10 +3,10 @@ RUN apt-get update && apt-get install -y build-essential
 # RUN apt-get install -y tpm2tools libtss2-dev
 
 # Install llama.cpp
-RUN git clone https://github.com/ggerganov/llama.cpp.git
+RUN git clone -b apertus-implementation https://github.com/pwilkin/llama.cpp.git
 WORKDIR llama.cpp
 RUN apt install cmake -y
-RUN cmake -B build
+RUN cmake -B build -DLLAMA_CURL=OFF
 RUN cmake --build build --config Release
 
 # Entrypoint
