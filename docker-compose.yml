@@ -10,18 +10,11 @@ services:
   open-webui:
     image: ghcr.io/open-webui/open-webui:main
     container_name: open-webui
+    ports:
+        - "8080:8080"
     volumes:
         - /var/lib/docker/volumes/open-webui/_data:/app/backend/data
     restart: unless-stopped
     environment:
         - OFFLINE_MODE=True
-    networks:
-        - open-webui-internal
-    ports:
-        - "8080:8080"
-
-networks:
-  open-webui-internal:
-    name: open-webui-internal-network
-    driver: bridge
-    internal: true
+    network_mode: host
