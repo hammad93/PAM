@@ -14,5 +14,7 @@ services:
         - "8080:8080"
     volumes:
         - /var/lib/docker/volumes/open-webui/_data:/app/backend/data
-    network_mode: host
     restart: unless-stopped
+    environment:
+        - OFFLINE_MODE=True
+    network_mode: host
