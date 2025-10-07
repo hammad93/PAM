@@ -17,6 +17,8 @@ services:
         - OFFLINE_MODE=True
     networks:
         - open-webui-internal
+    ports:
+        - "8080:8080"
 
 networks:
   open-webui-internal:
