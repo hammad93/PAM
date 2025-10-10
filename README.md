@@ -11,10 +11,10 @@ The system is locally hosted. The prerequisite are the associated GGUF files. Pl
 If we are switching the LLM or otherwise updating it, we need to ensure that the llama.cpp server configuration reflects it. In the `docker/llm` directory there is a  `entrypoint.sh` file that contains the initial configuration. Please update the GGUF filename with the first in the sequence for the `--model` flag.
 
 ## Downloading Models
-Currently, the design supports command line interfaces such as the [huggingface-cli](https://huggingface.co/docs/huggingface_hub/en/guides/cli). Please reference the following command to understand how to download a LLM to a locally specified directory.
+Currently, the design supports command line interfaces such as the [hf download cli](https://huggingface.co/docs/huggingface_hub/en/guides/cli#download-multiple-files). Please reference the following command to understand how to download a LLM to a locally specified directory. Note that we utilize file matching patterns with `--include`.
 
 ```
-sudo huggingface-cli download DevQuasar/swiss-ai.Apertus-70B-Instruct-2509-GGUF --include "*Q8*" --local-dir .
+hf download unsloth/Apertus-8B-Instruct-2509-GGUF --include "*UD-Q8_K_XL*" --local-dir .
 ```
 
 # Trusted Platform Module (TPM)
