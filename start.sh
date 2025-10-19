@@ -7,6 +7,6 @@ else
     echo "Error: Symbolic link does not exist: ./symlink" >&2
     exit 1
 fi
-
+yes | docker system prune -a
 docker compose build --no-cache
 docker compose up -d
