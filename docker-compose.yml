@@ -10,6 +10,7 @@ services:
   open-webui:
     image: ghcr.io/open-webui/open-webui:main
     container_name: open-webui
+    privileged: true
     ports:
         - "8080:8080"
     volumes:
