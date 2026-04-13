@@ -21,7 +21,7 @@ else
     exit 1
 fi
 
-docker system prune -a
+yes | docker system prune -a
 docker compose build --no-cache
 #docker compose build
 docker compose up -d
