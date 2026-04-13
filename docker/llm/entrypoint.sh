@@ -1,10 +1,13 @@
+#!/bin/bash
 cd /llama.cpp/build/bin/
 ./llama-server \
-    --model /data/swiss-ai.Apertus-70B-Instruct-2509.Q8_0-00001-of-00006.gguf \
+    --model /data/gpt-oss-120b-F16.gguf \
     --port 10000 \
-    --ctx-size 4096 \
-    --threads 64 \
+    --ctx-size 131072 \
+    --threads 32 \
     --host 0.0.0.0 \
+    --offline \
+    --flash-attn on \
     --mlock \
     --no-mmap \
-    --offline
+    --numa distribute
